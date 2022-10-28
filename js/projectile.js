@@ -152,12 +152,12 @@ document.addEventListener("keydown", function(e) {
     }
     if(e.key==="s") {
       if (hitboxActivated == true) {
-        projectileMoveHaut()
+        // projectileMoveHaut()
       }
     }
     if(e.key==="z") {
       if (hitboxActivated == true) {
-        projectileMoveBas()
+        // projectileMoveBas()
       }
     }
   } else {

@@ -231,9 +231,3 @@ hitbox3.style.left = 0 + "vh";
 
 hitbox4.style.top = 12 + "vh";
 hitbox4.style.left = 24 + "vh";
-
-
-
-//check if there is a collision between the two objects
-
-
