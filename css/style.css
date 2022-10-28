@@ -64,7 +64,41 @@ img {
     color: white;
 }
 
+/* .timertext {
+    background-color: rgba(0, 0, 0, 20%);
+    padding: 2vh; */
+
 .hit_h {
     width : 25vh;
     height : 3vh;
+}
+
+.projectileH {
+    width : 5vh;
+    height: 1.5vh;
+}
+
+.projectileB {
+    width : 5vh;
+    height: 1.5vh;
+    transform: rotate(180deg);
+}
+
+.hitbox2 {
+    transform: rotate(180deg);
+}
+
+.hitbox3 {
+    transform: rotate(270deg);
+}
+
+.hitbox4 {
+    transform: rotate(90deg);
+}
+
+.vies {
+    color: white;
+    position: absolute;
+    font-size: 5vh;
+    font-family: 'undertale';
 }

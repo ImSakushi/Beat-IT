@@ -10,68 +10,132 @@ document.getElementById('redmic').style.left = horizontal;      // affectation d
 
 function redmic_mouv() { // mouvement defenseur
     console.log("event.keyCode="+event.keyCode);
-
-    // systeme mouvement + restrictions
-    if(vert != 0){  //restriction mouv
-        if(hor != 0){ //restriction mouv
-            if(hor != 24){ //restriction mouv
-                if(event.keyCode == 38){ // +up (-top*)
-                    // console.log("event.keyCode="+event.keyCode);
-                    document.getElementById("redmic").style.transitionDuration = "0.1s";
-                    projectileMoveH = projectileMoveH - 13;
-                    vert = vert - 13;
-                    vertical = vert + "vh";
-                    console.log(vertical);
-                    document.getElementById('redmic').style.top = vertical;
+    if (switchcolor == 0) {
+        if(vert != 0){  //restriction mouv
+            if(hor != 0){ //restriction mouv
+                if(hor != 24){ //restriction mouv
+                    if(event.keyCode == 38){ // +up (-top*)
+                        // console.log("event.keyCode="+event.keyCode);
+                        document.getElementById("redmic").style.transitionDuration = "0.1s";
+                        projectileMoveH = projectileMoveH - 13;
+                        vert = vert - 13;
+                        vertical = vert + "vh";
+                        console.log(vertical);
+                        document.getElementById('redmic').style.top = vertical;
+                    }
                 }
             }
         }
-    }
 
-    if(vert != 52){ //restriction mouv
-        if(hor != 0){ //restriction mouv
-            if(hor != 24){ //restriction mouv
-                if(event.keyCode == 40){ // +down (+top*)
-                    // console.log("event.keyCode="+event.keyCode);
-                    document.getElementById("redmic").style.transitionDuration = "0.1s";
-                    projectileMoveH = projectileMoveH + 13;
-                    vert = vert + 13;
-                    vertical = vert + "vh";
-                    console.log(vertical);
-                    document.getElementById('redmic').style.top = vertical;
+        if(vert != 52){ //restriction mouv
+            if(hor != 0){ //restriction mouv
+                if(hor != 24){ //restriction mouv
+                    if(event.keyCode == 40){ // +down (+top*)
+                        // console.log("event.keyCode="+event.keyCode);
+                        document.getElementById("redmic").style.transitionDuration = "0.1s";
+                        projectileMoveH = projectileMoveH + 13;
+                        vert = vert + 13;
+                        vertical = vert + "vh";
+                        console.log(vertical);
+                        document.getElementById('redmic').style.top = vertical;
+                    }
                 }
             }
         }
-    }
 
-    if(hor != 24){ //restriction mouv
-        if(vert != 52){ //restriction mouv
-            if(vert != 0){ //restriction mouv
-                if(event.keyCode == 39){ // +right (+left*)
-                    // console.log("event.keyCode="+event.keyCode);
-                    document.getElementById("redmic").style.transitionDuration = "0.1s";
-                    projectileMove = projectileMove + 11.5;
-                    hor = hor + 12;
-                    horizontal = hor + "vh";
-                    console.log(horizontal);
-                    document.getElementById('redmic').style.left = horizontal;
-                } 
+        if(hor != 24){ //restriction mouv
+            if(vert != 52){ //restriction mouv
+                if(vert != 0){ //restriction mouv
+                    if(event.keyCode == 39){ // +right (+left*)
+                        // console.log("event.keyCode="+event.keyCode);
+                        document.getElementById("redmic").style.transitionDuration = "0.1s";
+                        projectileMove = projectileMove + 11.5;
+                        hor = hor + 12;
+                        horizontal = hor + "vh";
+                        console.log(horizontal);
+                        document.getElementById('redmic').style.left = horizontal;
+                    } 
+                }
             }
         }
-    }
 
-    if(hor !=0){ //restriction mouv
+        if(hor !=0){ //restriction mouv
+            if(vert != 52){ //restriction mouv
+                if(vert != 0){ //restriction mouv
+                    if(event.keyCode == 37){ //+left (-left*)
+                        // console.log("event.keyCode="+event.keyCode);
+                        document.getElementById("redmic").style.transitionDuration = "0.1s";
+                        projectileMove = projectileMove - 11.5;
+                        hor = hor - 12;
+                        horizontal = hor + "vh";
+                        console.log(horizontal);
+                        document.getElementById('redmic').style.left = horizontal;
+                    } 
+                }
+            }
+        }
+    } else if (switchcolor == 1) {
+        if(vert != 0){  //restriction mouv
+            if(hor != 0){ //restriction mouv
+                if(hor != 24){ //restriction mouv
+                    if(event.keyCode == 90){ // +up (-top*)
+                        // console.log("event.keyCode="+event.keyCode);
+                        document.getElementById("redmic").style.transitionDuration = "0.1s";
+                        projectileMoveH = projectileMoveH - 13;
+                        vert = vert - 13;
+                        vertical = vert + "vh";
+                        console.log(vertical);
+                        document.getElementById('redmic').style.top = vertical;
+                    }
+                }
+            }
+        }
+
         if(vert != 52){ //restriction mouv
-            if(vert != 0){ //restriction mouv
-                if(event.keyCode == 37){ //+left (-left*)
-                    // console.log("event.keyCode="+event.keyCode);
-                    document.getElementById("redmic").style.transitionDuration = "0.1s";
-                    projectileMove = projectileMove - 11.5;
-                    hor = hor - 12;
-                    horizontal = hor + "vh";
-                    console.log(horizontal);
-                    document.getElementById('redmic').style.left = horizontal;
-                } 
+            if(hor != 0){ //restriction mouv
+                if(hor != 24){ //restriction mouv
+                    if(event.keyCode == 83){ // +down (+top*)
+                        // console.log("event.keyCode="+event.keyCode);
+                        document.getElementById("redmic").style.transitionDuration = "0.1s";
+                        projectileMoveH = projectileMoveH + 13;
+                        vert = vert + 13;
+                        vertical = vert + "vh";
+                        console.log(vertical);
+                        document.getElementById('redmic').style.top = vertical;
+                    }
+                }
+            }
+        }
+
+        if(hor != 24){ //restriction mouv
+            if(vert != 52){ //restriction mouv
+                if(vert != 0){ //restriction mouv
+                    if(event.keyCode == 68){ // +right (+left*)
+                        // console.log("event.keyCode="+event.keyCode);
+                        document.getElementById("redmic").style.transitionDuration = "0.1s";
+                        projectileMove = projectileMove + 11.5;
+                        hor = hor + 12;
+                        horizontal = hor + "vh";
+                        console.log(horizontal);
+                        document.getElementById('redmic').style.left = horizontal;
+                    } 
+                }
+            }
+        }
+
+        if(hor !=0){ //restriction mouv
+            if(vert != 52){ //restriction mouv
+                if(vert != 0){ //restriction mouv
+                    if(event.keyCode == 81){ //+left (-left*)
+                        // console.log("event.keyCode="+event.keyCode);
+                        document.getElementById("redmic").style.transitionDuration = "0.1s";
+                        projectileMove = projectileMove - 11.5;
+                        hor = hor - 12;
+                        horizontal = hor + "vh";
+                        console.log(horizontal);
+                        document.getElementById('redmic').style.left = horizontal;
+                    } 
+                }
             }
         }
     }
