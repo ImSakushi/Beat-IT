@@ -18,6 +18,7 @@ function redmic_mouv() { // mouvement defenseur
                 if(event.keyCode == 38){ // +up (-top*)
                     // console.log("event.keyCode="+event.keyCode);
                     document.getElementById("redmic").style.transitionDuration = "0.1s";
+                    projectileMoveH = projectileMoveH - 13;
                     vert = vert - 13;
                     vertical = vert + "vh";
                     console.log(vertical);
@@ -33,6 +34,7 @@ function redmic_mouv() { // mouvement defenseur
                 if(event.keyCode == 40){ // +down (+top*)
                     // console.log("event.keyCode="+event.keyCode);
                     document.getElementById("redmic").style.transitionDuration = "0.1s";
+                    projectileMoveH = projectileMoveH + 13;
                     vert = vert + 13;
                     vertical = vert + "vh";
                     console.log(vertical);

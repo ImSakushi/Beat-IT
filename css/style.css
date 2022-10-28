@@ -63,3 +63,8 @@ img {
     font-family: 'undertale';
     color: white;
 }
+
+.hit_h {
+    width : 25vh;
+    height : 3vh;
+}

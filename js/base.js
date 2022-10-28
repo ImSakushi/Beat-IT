@@ -5,6 +5,7 @@ let x = 11.5;
 let y = 11;
 
 let projectileMove = 11.5;
+let projectileMoveH = 27;
 let vie_j1 = 3;
 
 document.addEventListener("keydown", function(e) {
@@ -79,6 +80,9 @@ redmic.style.left = x + "vh";
 
 hit.style.top = -2 + "vh";
 hit.style.left = projectileMove + "vh";
+
+hit_h.style.top = projectileMoveH + "vh";
+hit_h.style.left = 1 + "vh";
 
 // hit.style.left =  0 + "vh";
 
