@@ -6,6 +6,8 @@ var J2 = ["img/redmic.png", "img/bluemic.png"]
 var audio = new Audio('sounds/switch.wav');
 var damage = new Audio('sounds/damage.wav');
 var switchcolor = 0;
+var attack = false;
+var attackh = false;
 
 let x = 11.5;
 let y = 11;

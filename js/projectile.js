@@ -16,33 +16,39 @@ function collision() {
     var hitRect = hit.getBoundingClientRect();
     var redmicRect = redmic.getBoundingClientRect();
 
-    if (hitRect.top < redmicRect.bottom &&
-      hitRect.right > redmicRect.left &&
-      hitRect.bottom > redmicRect.top &&
-      hitRect.left < redmicRect.right) {
-      console.log("collision");
-      if (switchcolor == 0) {
-        vie_j1 = vie_j1 - 1;
-        damage.play()
-        document.getElementById("vies").innerHTML = vie_j1;
-      } else {
-        vie_j2 = vie_j2 - 1;
-        damage.play()
-        document.getElementById("vies").innerHTML = vie_j2;
-      }
-      if (vie_j1 == 0) {
-        setTimeout(function(){
-          alert("Joueur 1 a gagné");
-          restart()
-        }, 1000); 
-      }
-      if (vie_j2 == 0) {
-        setTimeout(function(){
-          alert("Joueur 2 a gagné");
-          restart()
-        }, 1000);
+  if (attackh == false) {
+    if (attack == false) {
+      if (hitRect.top < redmicRect.bottom &&
+        hitRect.right > redmicRect.left &&
+        hitRect.bottom > redmicRect.top &&
+        hitRect.left < redmicRect.right) {
+        console.log("collision");
+        attack = true;
+        setTimeout(function(){attack = false;}, 1000);
+        if (switchcolor == 0) {
+          vie_j1 = vie_j1 - 1;
+          damage.play()
+          document.getElementById("vies").innerHTML = vie_j1;
+        } else {
+          vie_j2 = vie_j2 - 1;
+          damage.play()
+          document.getElementById("vies").innerHTML = vie_j2;
+        }
+        if (vie_j1 == 0) {
+          setTimeout(function(){
+            alert("Joueur 1 a gagné");
+            restart()
+          }, 1000); 
+        }
+        if (vie_j2 == 0) {
+          setTimeout(function(){
+            alert("Joueur 2 a gagné");
+            restart()
+          }, 1000);
+        }
       }
     }
+  }
 }
 
 // Detect if there a collision between redmic and hit_h, if yes say hey in console
@@ -52,35 +58,40 @@ function collisionHaut() {
     var redmic = document.getElementById('redmic');
     var hitHRect = hit_h.getBoundingClientRect();
     var redmicRect = redmic.getBoundingClientRect();
-
-    if (hitHRect.top < redmicRect.bottom &&
-      hitHRect.right > redmicRect.left &&
-      hitHRect.bottom > redmicRect.top &&
-      hitHRect.left < redmicRect.right) {
-      console.log("collision");
-      if (switchcolor == 0) {
-        vie_j1 = vie_j1 - 1;
-        damage.play()
-        document.getElementById("vies").innerHTML = vie_j1;
-      } else {
-        vie_j2 = vie_j2 - 1;
-        damage.play()
-        document.getElementById("vies").innerHTML = vie_j2;
-      }
-      if (vie_j1 == 0) {
-        setTimeout(function(){
-          alert("Joueur 1 a gagné");
-          restart()
-        }, 1000); 
-      }
-      if (vie_j2 == 0) {
-        setTimeout(function(){
-          alert("Joueur 2 a gagné");
-          restart()
-        }, 1000);
+    if (attack == false) {
+      if (attackh == false) {
+        if (hitHRect.top < redmicRect.bottom &&
+          hitHRect.right > redmicRect.left &&
+          hitHRect.bottom > redmicRect.top &&
+          hitHRect.left < redmicRect.right) {
+          console.log("collision");
+          attackh = true;
+          setTimeout(function(){attackh = false;}, 1000);
+          if (switchcolor == 0) {
+            vie_j1 = vie_j1 - 1;
+            damage.play()
+            document.getElementById("vies").innerHTML = vie_j1;
+          } else {
+            vie_j2 = vie_j2 - 1;
+            damage.play()
+            document.getElementById("vies").innerHTML = vie_j2;
+          }
+          if (vie_j1 == 0) {
+            setTimeout(function(){
+              alert("Joueur 1 a gagné");
+              restart()
+            }, 1000); 
+          }
+          if (vie_j2 == 0) {
+            setTimeout(function(){
+              alert("Joueur 2 a gagné");
+              restart()
+            }, 1000);
+          }
+        }
       }
     }
-}
+  }
 
 
 function projectileMoveHaut() {
@@ -128,11 +139,13 @@ document.addEventListener("keydown", function(e) {
     if(e.key==="z" || e.key==="s") {
         if (hitboxActivated == true) {
           console.log("Valide !");
-          document.getElementById('hit').style.display='block';
-          collision()
-          setTimeout(function() {
-              document.getElementById('hit').style.display='none';
-          }, 500);
+          if (attack == false && attackh == false) {
+            document.getElementById('hit').style.display='block';
+            collision()
+            setTimeout(function() {
+                document.getElementById('hit').style.display='none';
+            }, 500);
+          }
         } else {
             console.log("Non valide !");
         }
@@ -141,11 +154,13 @@ document.addEventListener("keydown", function(e) {
       if (hitboxActivated == true) {
         console.log("Valide !");
       hit_h.style.top = projectileMoveH + "vh";
-        document.getElementById('hit_h').style.display='block';
-        collisionHaut()
-        setTimeout(function() {
-            document.getElementById('hit_h').style.display='none';
-        }, 500);
+        if (attack == false && attackh == false) {
+          document.getElementById('hit_h').style.display='block';
+          collisionHaut()
+          setTimeout(function() {
+              document.getElementById('hit_h').style.display='none';
+          }, 500);
+        }
       } else {
         console.log("Non valide !");
       }
@@ -164,11 +179,13 @@ document.addEventListener("keydown", function(e) {
     if(e.key==="ArrowUp" || e.key==="ArrowDown") {
       if (hitboxActivated == true) {
         console.log("Valide !");
-        document.getElementById('hit').style.display='block';
-        collision()
-        setTimeout(function() {
-            document.getElementById('hit').style.display='none';
-        }, 500);
+        if (attack == false && attackh == false) {
+          document.getElementById('hit').style.display='block';
+          collision()
+          setTimeout(function() {
+              document.getElementById('hit').style.display='none';
+          }, 500);
+        }
       } else {
           console.log("Non valide !");
       }
@@ -177,11 +194,13 @@ document.addEventListener("keydown", function(e) {
     if (hitboxActivated == true) {
       console.log("Valide !");
     hit_h.style.top = projectileMoveH + "vh";
+    if (attack == false && attackh == false) {
       document.getElementById('hit_h').style.display='block';
       collisionHaut()
       setTimeout(function() {
           document.getElementById('hit_h').style.display='none';
       }, 500);
+    }
     } else {
       console.log("Non valide !");
     }
